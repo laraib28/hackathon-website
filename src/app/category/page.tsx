@@ -65,13 +65,7 @@ const Category = () => {
       rating: 4.0,
       price: "$145",
     },
-    {
-      id: 9,
-      name: "Loose Fit Bermuda Short",
-      image: "/images/casual9.png",
-      rating: 3.0,
-      price: "$80",
-    },
+   
   ];
 
   return (

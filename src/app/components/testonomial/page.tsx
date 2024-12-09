@@ -26,17 +26,17 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="bg-white p-6 md:p-10">
+    <div className="bg-white p-6 md:p-10 ">
       <h2 className="text-2xl md:text-4xl font-bold text-center mb-8">
         OUR HAPPY CUSTOMERS
       </h2>
-      <div className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth">
+      <div className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth ">
         {testimonials.map((testimonial) => (
           <div
             key={testimonial.id}
             className="flex-shrink-0 w-[250px] md:w-[300px] p-6 rounded-xl shadow-lg border bg-gray-50"
           >
-            <div className="flex items-center mb-4">
+            <div className="flex items-center mb-4 ml-6">
               {/* Rating Stars */}
               <div className="text-yellow-500 flex">
                 {Array.from({ length: testimonial.rating }).map((_, index) => (
