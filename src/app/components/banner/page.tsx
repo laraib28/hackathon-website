@@ -69,11 +69,11 @@ const HeroSection = () => {
       {/* Brand Logos */}
       <div className="bg-black text-white py-4 sm:py-6">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center space-y-4 sm:space-y-0">
-          <img src="/versace-logo.png" alt="Versace" className="h-8 sm:h-10" />
-          <img src="/zara-logo.png" alt="Zara" className="h-8 sm:h-10" />
-          <img src="/gucci-logo.png" alt="Gucci" className="h-8 sm:h-10" />
-          <img src="/prada-logo.png" alt="Prada" className="h-8 sm:h-10" />
-          <img src="/calvin-klein-logo.png" alt="Calvin Klein" className="h-8 sm:h-10" />
+          <Image src="/zara-logo.png" alt="Zara" className="h-8 sm:h-10" />
+          <Image src="/versace-logo.png" alt="Versace" className="h-8 sm:h-10" />
+          <Image src="/gucci-logo.png" alt="Gucci" className="h-8 sm:h-10" />
+          <Image src="/prada-logo.png" alt="Prada" className="h-8 sm:h-10" />
+          <Image src="/calvin-klein-logo.png" alt="Calvin Klein" className="h-8 sm:h-10" />
         </div>
       </div>
     </section>

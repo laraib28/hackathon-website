@@ -3,7 +3,6 @@ import React from 'react'
 
 import BrowseByProduct from './components/brs/page'
 import Header from './components/hero/hero'
-import Nav from './components/home/nav'
 import Responsive from './components/home/responsive'
 import NewArrival from './components/newArrival/page'
 import Testimonials from './components/testonomial/page'
@@ -14,7 +13,6 @@ const Home = () => {
   return (
     <div>
       <Header/>
-      
       <Responsive/>
       <HeroSection/>
       <NewArrival/>
