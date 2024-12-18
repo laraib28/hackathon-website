@@ -3,58 +3,59 @@ import Image from 'next/image';
 
 const BrowseByProduct = () => {
   return (
-    <div className="bg-gray-100 text-gray-900 pt-16 max-w-screen-xl mx-auto h-auto rounded-[40px] p-6 sm:p-9">
-      <div className="text-2xl sm:text-4xl font-bold text-center mb-6">
+    <div className="bg-gray-100 text-gray-900 pt-16 w-[90%] max-w-[1100px] mt-14 mx-auto h-auto rounded-[40px] p-6 sm:p-9">
+      
+      {/* Heading */}
+      <div className="text-center text-gray-950 text-3xl font-extrabold mb-8">
         <h1>BROWSE BY DRESS STYLE</h1>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      {/* Grid Section */}
+      <div className="grid gap-x-2 gap-y-6 items-center 
+        grid-cols-1 sm:grid-cols-2 lg:grid-cols-[307px_1fr]">
+        
         {/* Casual */}
-        <div className="flex flex-col items-center p-4 bg-white shadow-md rounded-lg w-full">
-          <div className="relative w-full h-48">
-            <Image
-              src="/images/casual.png"
-              alt="Casual"
-              fill
-              className="rounded-lg object-cover"
-            />
-          </div>
-          <h2 className="mt-4 text-gray-900 font-bold text-lg sm:text-2xl">Casual</h2>
+        <div className="relative w-full h-[269px] border rounded-3xl overflow-hidden">
+          <h1 className="absolute top-4 left-4 text-black text-lg font-bold z-10">Casual</h1>
+          <Image 
+            src="/images/casual.png" 
+            alt="casual" 
+            layout="fill" 
+            objectFit="cover" 
+          />
         </div>
+
         {/* Formal */}
-        <div className="flex flex-col items-center p-4 bg-white shadow-md rounded-lg w-full">
-          <div className="relative w-full h-48">
-            <Image
-              src="/images/formal.png"
-              alt="Formal"
-              fill
-              className="rounded-lg object-cover"
-            />
-          </div>
-          <h2 className="mt-4 text-gray-900 font-bold text-lg sm:text-2xl">Formal</h2>
+        <div className="relative w-full h-[269px] border rounded-3xl overflow-hidden">
+          <h1 className="absolute top-4 left-4 text-black text-lg font-bold z-10">Formal</h1>
+          <Image 
+            src="/images/formal.png" 
+            alt="formal" 
+            layout="fill" 
+            objectFit="cover" 
+          />
         </div>
+
         {/* Party */}
-        <div className="flex flex-col items-center p-4 bg-white shadow-md rounded-lg w-full">
-          <div className="relative w-full h-48">
-            <Image
-              src="/images/party.png"
-              alt="Party"
-              fill
-              className="rounded-lg object-cover"
-            />
-          </div>
-          <h2 className="mt-4 text-gray-900 font-bold text-lg sm:text-2xl">Party</h2>
+        <div className="relative w-full h-[269px] border rounded-3xl overflow-hidden">
+          <h1 className="absolute top-4 left-4 text-black text-lg font-bold z-10">Party</h1>
+          <Image 
+            src="/images/party.png" 
+            alt="party" 
+            layout="fill" 
+            objectFit="cover" 
+          />
         </div>
+
         {/* Gym */}
-        <div className="flex flex-col items-center p-4 bg-white shadow-md rounded-lg w-full">
-          <div className="relative w-full h-48">
-            <Image
-              src="/images/gym.png"
-              alt="Gym"
-              fill
-              className="rounded-lg object-cover"
-            />
-          </div>
-          <h2 className="mt-4 text-gray-900 font-bold text-lg sm:text-2xl">Gym</h2>
+        <div className="relative w-full h-[269px] border rounded-3xl overflow-hidden">
+          <h1 className="absolute top-4 left-4 text-black text-lg font-bold z-10">Gym</h1>
+          <Image 
+            src="/images/gym.png" 
+            alt="gym" 
+            layout="fill" 
+            objectFit="cover" 
+          />
         </div>
       </div>
     </div>

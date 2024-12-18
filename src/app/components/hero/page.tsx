@@ -5,9 +5,9 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <section className="bg-gray-100">
+    <section className="bg-[#F2F0F1]">
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row py-8 lg:py-12"> {/* Responsive padding */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row py-8 lg:py-12">
         {/* Left Section */}
         <div className="lg:w-1/2 text-center lg:text-left">
           <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold pt-12 lg:pt-20">
@@ -51,29 +51,67 @@ const HeroSection = () => {
             <Image
               src="/images/banner.jpeg"
               alt="Fashion Models"
-              width={400} // Adjusted width
-              height={250} // Adjusted height
+              width={400} 
+              height={250} 
               className="object-cover rounded-lg"
             />
             {/* Decorative Stars */}
             <div className="absolute top-4 sm:top-6 right-4 sm:right-6 text-black text-2xl sm:text-3xl font-bold">
-              ★
+              <Image
+              src='/images/star.png'
+              alt="star"
+              height={50}
+              width={50}/>
             </div>
-            <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 text-black text-2xl sm:text-3xl font-bold">
-              ★
+            <div className="absolute top-48 left-4 sm:left-6 text-black text-2xl sm:text-3xl font-bold">
+            <Image
+              src='/images/s.star.png'
+              alt="star"
+              height={50}
+              width={50}/>
             </div>
           </div>
         </div>
       </div>
 
       {/* Brand Logos */}
-      <div className="bg-black text-white py-4 sm:py-6">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center space-y-4 sm:space-y-0">
-          <Image src="/zara-logo.png" alt="Zara" className="h-8 sm:h-10" />
-          <Image src="/versace-logo.png" alt="Versace" className="h-8 sm:h-10" />
-          <Image src="/gucci-logo.png" alt="Gucci" className="h-8 sm:h-10" />
-          <Image src="/prada-logo.png" alt="Prada" className="h-8 sm:h-10" />
-          <Image src="/calvin-klein-logo.png" alt="Calvin Klein" className="h-8 sm:h-10" />
+      <div className="bg-black text-white py-4 sm:py-6 ">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex gap-y-4 gap-x-8">
+          <Image
+            src="/images/Vector.png"
+            alt="Zara"
+            width={100}
+            height={100}
+            className="h-8 sm:h-10 mx-auto"
+          />
+          <Image
+            src="/images/zara-logo-1 1.png"
+            alt="Versace"
+            width={91}
+            height={38}
+            className="h-8 sm:h-10 mx-auto"
+          />
+          <Image
+            src="/images/Vector (1).png"
+            alt="Gucci"
+            width={100}
+            height={40}
+            className="h-8 sm:h-10 mx-auto"
+          />
+          <Image
+            src="/images/prada-logo-1 1.png"
+            alt="Prada"
+            width={156}
+            height={36}
+            className="h-8 sm:h-10 mx-auto"
+          />
+          <Image
+            src="/images/Group.png"
+            alt="Calvin Klein"
+            width={206}
+            height={33.35}
+            className="h-8 sm:h-10 mx-auto"
+          />
         </div>
       </div>
     </section>

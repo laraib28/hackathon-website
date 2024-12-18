@@ -2,17 +2,17 @@ import React from 'react'
 
 
 import BrowseByProduct from './components/brs/page'
-import Header from './components/hero/hero'
+// import Header from './components/home/header'
 import Responsive from './components/home/responsive'
 import NewArrival from './components/newArrival/page'
 import Testimonials from './components/testonomial/page'
 import SellingProduct from './components/selingproduct/page'
-import HeroSection from './components/banner/page'
+import HeroSection from './components/hero/page'
 
 const Home = () => {
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
       <Responsive/>
       <HeroSection/>
       <NewArrival/>

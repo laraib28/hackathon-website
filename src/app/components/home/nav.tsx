@@ -6,10 +6,11 @@ import { FaSearch } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
 import Responsive from "./responsive";  // Make sure the filename is correct (case-sensitive)
+import Header from "./header";
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-white px-6 py-4 flex items-center justify-between border-b">
+    <><Header /><nav className="w-full bg-white px-6 py-4 flex items-center justify-between border-b">
       {/* Logo */}
       <div className="font-extrabold text-3xl">
         <Link href="/">SHOP.CO</Link>
@@ -23,7 +24,7 @@ const Navbar = () => {
         <Link href="/on-sale" className="hover:text-black">
           On Sale
         </Link>
-        <Link href="/new-arrivals" className="hover:text-black">
+        <Link href="/newArrival" className="hover:text-black">
           New Arrivals
         </Link>
         <Link href="/brands" className="hover:text-black">
@@ -38,20 +39,23 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search for products..."
-            className="w-full pl-10 pr-4 py-3 rounded-full bg-gray-100 text-sm outline-none"
-          />
+            className="w-full pl-10 pr-4 py-3 rounded-full bg-gray-100 text-sm outline-none" />
         </div>
       </div>
 
       {/* Icons */}
       <div className="hidden md:flex items-center space-x-4 text-gray-700">
+        <Link href="/cart">
         <IoCartOutline className="text-xl font-semibold hover:text-black cursor-pointer" />
+        </Link>
+        <Link href="/category">
         <FaRegUser className="font-bold hover:text-black cursor-pointer" />
+        </Link>
       </div>
 
       {/* Responsive Menu */}
-      <Responsive />  {/* This handles the mobile menu */}
-    </nav>
+      <Responsive />  
+    </nav></>
   );
 };
 
