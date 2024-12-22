@@ -7,6 +7,8 @@ import { IoCartOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
 import Responsive from "./responsive";  // Make sure the filename is correct (case-sensitive)
 import Header from "./header";
+import onSale from "../onsale/page";
+import newArrival from "../newArrival/page";
 
 const Navbar = () => {
   return (
@@ -21,7 +23,7 @@ const Navbar = () => {
         <Link href="/shop" className="hover:text-black">
           Shop
         </Link>
-        <Link href="/on-sale" className="hover:text-black">
+        <Link href="/OnSale" className="hover:text-black">
           On Sale
         </Link>
         <Link href="/newArrival" className="hover:text-black">

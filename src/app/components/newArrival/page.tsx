@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-const NewArrival = () => {
+const newArrival = () => {
     const products = [
         {
             id: 1,
@@ -89,4 +89,4 @@ const NewArrival = () => {
     );
 };
 
-export default NewArrival;
+export default newArrival;

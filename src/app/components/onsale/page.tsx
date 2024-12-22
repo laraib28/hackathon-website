@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-const SellingProduct = () => {
+const onSale = () => {
     const products = [
         {
             id: 1,
@@ -92,4 +92,4 @@ const SellingProduct = () => {
     );
 };
 
-export default SellingProduct;
+export default onSale;
