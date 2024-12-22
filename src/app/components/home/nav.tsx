@@ -7,8 +7,6 @@ import { IoCartOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
 import Responsive from "./responsive";  // Make sure the filename is correct (case-sensitive)
 import Header from "./header";
-import onSale from "../onsale/page";
-import newArrival from "../newArrival/page";
 
 const Navbar = () => {
   return (
