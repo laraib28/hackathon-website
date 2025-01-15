@@ -65,6 +65,13 @@ const Category = () => {
       rating: 4.0,
       price: "$145",
     },
+    {
+      id: 8,
+      name: "Loose Fit Bermuda Shorts",
+      image: "/images/selling3.png",
+      rating: 3.0,
+      price: "$80",
+    },
    
   ];
 
@@ -150,7 +157,7 @@ const Category = () => {
         {/* Products Grid */}
         <section className="col-span-12 sm:col-span-9">
           <h2 className="text-2xl font-bold mb-4">Casual</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {products.map((product) => (
               <div key={product.id} className="bg-white rounded-3xl shadow-sm p-4">
                 <Image
