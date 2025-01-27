@@ -1,18 +1,25 @@
-"use client";
+// app/newArrivalS/[slug]/SlugPage.tsx
+"use client"; // This will mark this component as client-side
 
 import { useState } from "react";
 import Image from "next/image";
-import { ToastContainer, toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/app/redux/cartSlice";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-interface Product {
-  slug: { current: string };
+interface NewArrival {
   name: string;
+  slug: {
+    current: string;
+  };
   price: number;
   description: string;
-  image: { asset: { url: string } };
+  image: {
+    asset: {
+      url: string;
+    };
+  };
   category: string;
   discountPercent?: number;
   rating?: number;
@@ -21,11 +28,11 @@ interface Product {
   tags: string[];
 }
 
-interface ProductPageProps {
-  product: Product;
+interface SlugPageProps {
+  product: NewArrival;
 }
 
-const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
+const SlugPage: React.FC<SlugPageProps> = ({ product }) => {
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [quantity, setQuantity] = useState<number>(1);
@@ -50,6 +57,13 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
     );
     toast.success(`"${product.name}" has been added to the cart!`);
   };
+
+  const increaseQuantity = () => setQuantity((prev) => prev + 1);
+  const decreaseQuantity = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-8">
@@ -120,14 +134,14 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
             <h3 className="font-medium text-lg mb-2">Quantity:</h3>
             <div className="flex items-center gap-4">
               <button
-                onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
+                onClick={decreaseQuantity}
                 className="px-4 py-2 border rounded-md text-blue-500 hover:bg-gray-100"
               >
                 -
               </button>
               <span className="text-lg">{quantity}</span>
               <button
-                onClick={() => setQuantity((prev) => prev + 1)}
+                onClick={increaseQuantity}
                 className="px-4 py-2 border rounded-md text-blue-500 hover:bg-gray-100"
               >
                 +
@@ -137,6 +151,7 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
 
           <button
             onClick={handleAddToCart}
+            disabled={!selectedSize || !selectedColor}
             className={`w-full py-3 text-white font-bold text-lg rounded-md ${
               selectedSize && selectedColor
                 ? "bg-blue-500 hover:bg-black"
@@ -151,4 +166,4 @@ const ProductPage: React.FC<ProductPageProps> = ({ product }) => {
   );
 };
 
-export default ProductPage;
+export default SlugPage;

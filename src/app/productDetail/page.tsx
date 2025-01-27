@@ -3,41 +3,87 @@ import Image from 'next/image'
 import { FaStarHalf } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
 import { FaRegCircle } from "react-icons/fa";
+import { client } from '@/sanity/lib/client';
+import Link from 'next/link';
 
-const productDetail = () => {
-  const products = [
+export interface productDetail {
+  name: string;
+  slug: {
+    current: string;
+  price: number;
+  description: string;
+  image: {
+    asset: {
+      url: string; // Image ka URL
+    };
+  };
+  category: string;
+  discountPercent?: number; // Optional field
+  rating?: number; // Optional field
+  colors?: string[]; // Optional array
+  sizes?: string[]; // Optional array
+  tags: string[]; // Tags array
+}
+
+}
+const productDetail = async() => {
+   const data: productDetail [] = await client.fetch(
+    `*[_type == "products" && "productDetail" in tags] {
+  name,
+  "slug":slug.current,
+  price,
+  description,
+  image {
+    asset -> {
+      url
+    }
+  },
+  category,
+  discountPercent,
+  rating,
+  colors,
+  sizes,
+  tags
+}
+`
+   )
+   const product = [
     {
-        id: 1,
-        name: 'Polo with Contret Trims',
-        image: '/images/pd1.png',
-        rating: 4.5,
-        price: '$120',
-        discountprice:'$242'
+      id: 1,
+      name: 'Polo with Contret Trims',
+      image: { asset: { url: '/images/casual1.png' } },
+      rating: 4.5,
+      price: '$120',
+      discountprice: '$242',
+      slug: 'polo-with-contret-trims', // Added slug
     },
     {
-        id: 2,
-        name: 'Gradient Graphic T-shirt',
-        image: '/images/casual1.png',
-        rating: 3.5,
-        price: '$145',
-        
+      id: 2,
+      name: 'Gradient Graphic T-shirt',
+      image: { asset: { url: '/images/casual2.png' } },
+      rating: 3.5,
+      price: '$145',
+      slug: 'gradient-graphic-t-shirt', // Added slug
     },
     {
-        id: 3,
-        name: 'Polo with Tipping Details',
-        image: '/images/casual3.png',
-        rating: 4.5,
-        price: '$180'
+      id: 3,
+      name: 'Polo with Tipping Details',
+      image: { asset: { url: '/images/casual3.png' } },
+      rating: 4.5,
+      price: '$180',
+      slug: 'polo-with-tipping-details', // Added slug
     },
     {
-        id: 4,
-        name: 'Black Stripped T-shirt',
-        image: '/images/pd4.png',
-        rating: 4.5,
-        price: '$120',
-        discountprice: '$150'
+      id: 4,
+      name: 'Black Stripped T-shirt',
+      image: { asset: { url: '/images/casual9.png' } },
+      rating: 4.5,
+      price: '$120',
+      discountprice: '$150',
+      slug: 'black-stripped-t-shirt', // Added slug
     },
-  ]
+  ];
+  
   const renderStars = (rating: number) => {
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 !== 0;
@@ -156,23 +202,29 @@ const productDetail = () => {
       <Image src='/images/r4.png' alt='rewie' height={500} width={500} className='w-[500]'/>
       <Image src='/images/r5.png' alt='rewie' height={500} width={500} className='w-[500]'/>
       <Image src='/images/r6.png' alt='rewie' height={500} width={500} className='w-[500]'/>
-
+      
     </div>
+   
     <div className='text-right mr-7'>
     <button className='border rounded-full w-44 h-9  mt-3'>Load More Reviews</button>
     </div>
     <div className='text-3xl text-gray-900 text-center font-bold'>YOU MIGHT ALSO LIKE</div>
     <div>
+    
       <div>
         <div className="px-10 lg:px-20"> {/* Increased horizontal padding */}
                     <div className="text-center font-extrabold text-4xl pt-10 pb-10">
                         <h1>NEW ARRIVAL</h1>
                     </div>
+
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                        {products.map((product) => (
+
+                        {product.map((product,index) => (
+                                              <Link href={`/productDetailS/${product.slug}`}>
+
                             <div key={product.id} className="text-center">
                                 <Image 
-                                    src={product.image}
+                                    src={product.image.asset.url}
                                     alt={product.name}
                                     width={220} 
                                     height={220} 
@@ -187,10 +239,14 @@ const productDetail = () => {
                                             {product.discountprice}
                                         </p>
                                     )}
+                                    
                                 </div>
                             </div>
+                            </Link>
+ 
                         ))}
                     </div>
+
                     </div>
       </div>
     </div>

@@ -1,26 +1,44 @@
-import React from 'react'
-
-
-import BrowseByProduct from './brands/page'
-// import Header from './components/home/header'
-import Responsive from './components/responsive'
-import NewArrival from './newArrival/page'
-import Testimonials from './testonomial/page'
-import SellingProduct from './onSale/page'
-import HeroSection from './hero/page'
+import React, { Suspense } from 'react';
+import BrowseByProduct from './brands/page';
+import Responsive from '../components/home/responsive';
+import Testimonials from './testonomial/page';
+import HeroSection from './hero/page';
+import SlugPage from './newArrivalS/[slug]/page';
+import OnSale from './onSale/page';
+import NewArrival from './newArrival/page';
 
 const Home = () => {
   return (
     <div>
-      {/* <Header/> */}
-      <Responsive/>
-      <HeroSection/>
-      <NewArrival/>
-      <SellingProduct/>
-      <BrowseByProduct/>
-      <Testimonials/>
-    </div>
-  )
-}
+      {/* Suspense is only needed for dynamic imports */}
+      <Suspense >
+        <Responsive />
+      </Suspense>
+      
+      <Suspense>
+        <HeroSection />
+      </Suspense>
 
-export default Home
+      <Suspense >
+        <NewArrival />
+      </Suspense>
+
+      <Suspense >
+        <OnSale />
+      </Suspense>
+
+      <Suspense>
+        <BrowseByProduct />
+      </Suspense>
+
+      <Suspense>
+        <Testimonials />
+      </Suspense>
+
+      {/* Dynamically rendered SlugPage is handled by Next.js routing */}
+      {/* You do not need to manually invoke it */}
+    </div>
+  );
+};
+
+export default Home;

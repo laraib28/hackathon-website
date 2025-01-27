@@ -165,7 +165,7 @@ const Category = () => {
                   alt={product.name}
                   width={300}
                   height={200}
-                  className="w-full h-48 object-cover rounded-3xl mb-4"
+                  className="w-full h-48 object-fit rounded-3xl mb-4"
                 />
                 <h3 className="font-semibold text-lg">{product.name}</h3>
                 <div className="flex items-center mb-2">
